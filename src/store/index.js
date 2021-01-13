@@ -24,8 +24,14 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    CREATE_REGISTER(state, payload){
+      state.cadastro = payload
+    }
   },
   actions: {
+    criarCadastro(context, payload){
+      context.commit('CREATE_REGISTER', payload)
+    }
   },
   modules: {
   }

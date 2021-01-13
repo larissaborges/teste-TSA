@@ -7,19 +7,19 @@
       <form>
         <div class="wrapper">
           <div class="box">
-            <input type="text" name="name"/>
+            <input type="text" name="name" v-model="cadastro.nome"/>
             <label for="name">Nome</label>
             </div>
         </div>
         <div class="wrapper">
           <div class="box">
-            <input type="text" name="email"/>
+            <input type="text" name="email" v-model="cadastro.email"/>
             <label for="email">Email</label>
             </div>
         </div>
         <div class="wrapper">
           <div class="box">
-            <input type="text" name="CPF"/>
+            <input type="text" name="CPF" v-model="cadastro.cpf"/>
             <label for="cpf">CPF</label>
             </div>
         </div>
@@ -107,7 +107,7 @@
         </div>
         <div class="text">
           <p>Seu cartão será debitado em R$ 49,00</p>
-            <button class="btn">Realizar Matrícula</button>
+            <button @click.prevent="cadastrar" class="btn">Realizar Matrícula</button>
           <p class="crip">Informações seguras e criptografadas</p>
         </div>
       </form>
@@ -121,6 +121,26 @@ export default {
   name: 'Home',
   components: {
     
+  },
+  data(){
+    return{
+      cadastro: {
+      nome: "",
+      email: "",
+      cpf: "",
+      endereco: "",
+      estado: "",
+      cep: "",
+      cidade: ""
+    }
+    }
+  },
+  methods: {
+    cadastrar() {
+      this.$store.dispatch('criarCadastro', this.cadastro)
+      console.log(this.cadastro)
+      this.$router.push({name: 'lista'})
+    }
   }
 }
 </script>
