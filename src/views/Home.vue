@@ -124,6 +124,7 @@ export default {
   },
   data(){
     return{
+      cadastrado: false,
       cadastro: {
       nome: "",
       email: "",
@@ -143,8 +144,8 @@ export default {
   },
   methods: {
     cadastrar() {
-      this.$store.dispatch('criarCadastro', this.cadastro)
-      console.log(this.cadastro)
+      this.$store.commit('CREATE_REGISTER', this.cadastro)
+      this.$store.commit('ADD_REGISTER', true)
       this.$router.push({name: 'lista'})
     }
   }

@@ -1,6 +1,7 @@
 <template>
   <footer>
-      <p>{{cadastro.nome}} - 2021</p>
+      <div v-if="$store.state.cadastrado">{{cadastro.nome}} - 2021</div>
+      <div v-else>2021</div>
   </footer>
 </template>
 
@@ -9,6 +10,9 @@ export default {
 computed: {
     cadastro(){
         return this.$store.state.cadastro
+    },
+    cadastrado(){
+        return this.$store.state.cadastrado
     }
 }
 }
@@ -22,8 +26,10 @@ footer{
     background-color: #1188EE;
     color: white;
     font-weight: bold;
+    position: relative;
+    top: 75px;
 }
-p{
+div{
     margin: 40px;
 }
 </style>

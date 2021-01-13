@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    cadastrado: false,
     cadastro: {
       nome: "",
       email: "",
@@ -22,15 +23,15 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    ADD_REGISTER(state, payload){
+      state.cadastrado = payload
+    },
     CREATE_REGISTER(state, payload){
       state.cadastro = payload
+      console.log(payload)
     }
   },
   actions: {
-    criarCadastro(context, payload){
-      context.commit('CREATE_REGISTER', payload)
-      console.log(payload)
-    }
   },
   modules: {
   }

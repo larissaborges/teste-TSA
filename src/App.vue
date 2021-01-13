@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <Header />
-    <router-view/>
+    <Header/>
+      <transition mode="out-in">
+        <router-view/>  
+      </transition>
     <Footer/>
   </div>
 </template>
@@ -17,13 +19,14 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 * {
-padding:0;
-margin:0;
-list-style:none;
-border:0;
-font-family: 'Nunito';
-font-size: 18px
+  padding:0;
+  margin:0;
+  list-style:none;
+  border:0;
+  font-family: 'Nunito';
+  font-size: 18px;
 }
+
 a{
   color: #EFF4F9;
   font-weight: bold;
@@ -99,6 +102,22 @@ input::placeholder, select{
 .line {
   padding: 20px 0px 20px 0px;
   color: #1188EE;
+}
+.v-enter, 
+.v-leave-to {
+  opacity: 0;
+}
+
+.v-enter {
+  transform: translate3d(-20px, 0, 0)
+}
+.v-leave-to {
+  transform: translate3d(20px, 0, 0)
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition:  all 0.3s
 }
 @media(max-width: 767px){
   form, .listagem{
