@@ -12,14 +12,12 @@ export default new Vuex.Store({
       endereco: "",
       estado: "",
       cep: "",
-      cidade: ""
-    },
-    pagamento: {
-      tipo: "",
-      nome: "",
-      mes: "",
+      cidade: "",
+      tipoDePagamento: "",
+      nomeNoCartao: "",
+      mes:"",
       ano: "",
-      numero: "",
+      numero: "", 
       codigo: ""
     }
   },
@@ -31,6 +29,7 @@ export default new Vuex.Store({
   actions: {
     criarCadastro(context, payload){
       context.commit('CREATE_REGISTER', payload)
+      console.log(payload)
     }
   },
   modules: {

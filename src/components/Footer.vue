@@ -1,12 +1,16 @@
 <template>
   <footer>
-      <p>nome - 2021</p>
+      <p>{{cadastro.nome}} - 2021</p>
   </footer>
 </template>
 
 <script>
 export default {
-
+computed: {
+    cadastro(){
+        return this.$store.state.cadastro
+    }
+}
 }
 </script>
 

@@ -25,11 +25,11 @@
         </div>
         <div class="wrapper">
           <div class="box">
-            <input type="text" name="endereco" placeholder="Rua, Número e Bairro"/>
+            <input type="text" name="endereco" placeholder="Rua, Número e Bairro" v-model="cadastro.endereco"/>
             <label for="endereco">Endereço</label>
             </div>
             <div class="box">
-            <select>
+            <select v-model="cadastro.estado">
               <option disabled selected value="">Selecione um Estado</option>
               <option value="CE">CE</option>
               <option value="MA">MA</option>
@@ -41,11 +41,11 @@
         </div>
         <div class="wrapper">
           <div class="box">
-            <input type="text" name="cep"/>
+            <input type="text" name="cep" v-model="cadastro.cep"/>
             <label for="cep">CEP</label>
             </div>
             <div class="box">
-            <select>
+            <select v-model="cadastro.cidade">
               <option disabled selected value="">Selecione a cidade</option>
               <option value="Fortaleza">Fortaleza</option>
               <option value="São Luís">São Luís</option>
@@ -60,32 +60,32 @@
         </div>
         <div class="wrapper">
           <div class="box radios">
-            <input type="radio" name="payment" id="cartao" value="cartao" >
+            <input type="radio" name="payment" id="cartao" value="cartao" v-model="cadastro.tipoDePagamento">
             <span class="checkmark"></span>
             <label for="cartao">Cartão de Crédito</label>
           </div>
           <div class="box radios">
-            <input type="radio" name="payment" id="boleto" value="boleto" >
+            <input type="radio" name="payment" id="boleto" value="boleto" v-model="cadastro.tipoDePagamento">
             <span class="checkmark"></span>
             <label for="boleto">Boleto Bancário</label>
           </div>
         </div>
         <div class="wrapper">
           <div class="box">
-            <input type="text" placeholder="Nome impresso no cartão">
+            <input type="text" placeholder="Nome impresso no cartão" v-model="cadastro.nomeNoCartao">
             <label for="nome-cartao">Nome no Cartão</label>
           </div>
           <div class="wrapper-box">
             <div class="box">
               <label class="label" for="mes">Data de expiração</label>
-              <select>
+              <select v-model="cadastro.mes">
                 <option disabled selected value="">Mês</option>
                 <option value="janeiro">Janeiro</option>
                 <option value="fevereiro">Fevereiro</option>
               </select>
             </div>
             <div class="box">
-              <select>
+              <select v-model="cadastro.ano">
                 <option disabled selected value="">Mês</option>
                 <option value="janeiro">Janeiro</option>
                 <option value="fevereiro">Fevereiro</option>
@@ -95,11 +95,11 @@
         </div>
         <div class="wrapper">
           <div class="box">
-            <input type="text">
+            <input type="text" v-model="cadastro.numero">
             <label for="numero">Número do Cartão</label>
           </div>
           <div class="box">
-            <input type="text">
+            <input type="text" v-model="cadastro.codigo">
             <label for="codigo">Código de Segurança</label>
           </div>
         </div>
@@ -131,7 +131,13 @@ export default {
       endereco: "",
       estado: "",
       cep: "",
-      cidade: ""
+      cidade: "",
+      tipoDePagamento: "",
+      nomeNoCartao: "",
+      mes:"",
+      ano: "",
+      numero: "", 
+      codigo: ""
     }
     }
   },

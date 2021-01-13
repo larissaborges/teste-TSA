@@ -15,7 +15,8 @@ export default {
 </script>
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');* {
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+* {
 padding:0;
 margin:0;
 list-style:none;
@@ -23,6 +24,13 @@ border:0;
 font-family: 'Nunito';
 font-size: 18px
 }
+a{
+  color: #EFF4F9;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 10px;
+}
+
 .header {
   font-size: 40px;
   background-color: #EFF4F9;
