@@ -144,9 +144,13 @@ export default {
   },
   methods: {
     cadastrar() {
-      this.$store.commit('CREATE_REGISTER', this.cadastro)
-      this.$store.commit('ADD_REGISTER', true)
-      this.$router.push({name: 'lista'})
+      if(this.cadastro.nome === ''){
+        alert('Preencha os campos do formulário para se cadastrar.')
+      } else {
+        this.$store.commit('CREATE_REGISTER', this.cadastro)
+        this.$store.commit('ADD_REGISTER', true)
+        this.$router.push({name: 'lista'})
+      }
     }
   }
 }

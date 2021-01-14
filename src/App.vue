@@ -125,7 +125,7 @@ input::placeholder, select{
   margin: 20px !important;
 }
 .header p{
-  margin: 20px !important;
+  margin-left: 20px !important;
 }
 }
 </style>

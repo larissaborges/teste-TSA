@@ -23,7 +23,7 @@
           <div>{{cadastro.nome}}</div>
           <div>{{cadastro.email}}</div>
           <div>{{cadastro.cpf}}</div>
-          <div>{{ new Date().toLocaleString() }}</div>
+          <div>{{ currentDate }}</div>
         </div>
 
         </div>
@@ -42,6 +42,17 @@ export default {
     cadastro(){
      return this.$store.state.cadastro
     }
+  }, 
+  methods:{
+    createdAt: function() {
+      var currentDateWithFormat = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+      this.currentDate = currentDateWithFormat
+      console.log(this.currentDate)
+    }
+  },
+  created() {
+      this.createdAt()
+      console.log('chamando')
   }
 }
 </script>
