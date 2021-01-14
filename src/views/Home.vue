@@ -175,5 +175,17 @@ select option{
 .crip{
   font-size: 13px;
 }
-
+.radios{
+  margin-bottom: 20px;
+}
+.radios input{
+  box-shadow: none;
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+.radios label{
+  position: relative;
+  top: 0;
+}
 </style>

@@ -19,11 +19,11 @@
           <div>Nome</div>
           <div>Email</div>
           <div>CPF</div>
-          <div>Criado em: ?</div>
+          <div>Criado em</div>
           <div>{{cadastro.nome}}</div>
           <div>{{cadastro.email}}</div>
           <div>{{cadastro.cpf}}</div>
-          <div>larissafurtad</div>
+          <div>{{ new Date().toLocaleString() }}</div>
         </div>
 
         </div>
@@ -33,6 +33,11 @@
 </template>
 <script>
 export default {
+  data(){
+    return{
+      currentDate: null
+    }
+  },
   computed:{
     cadastro(){
      return this.$store.state.cadastro
